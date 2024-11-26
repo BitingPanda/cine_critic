@@ -1,13 +1,84 @@
-/* Styling for the static heading */
-.static_heading {
-  background-color: #f4f4f4;
-  margin-top: 60px;
-  width: 90%;
-  max-width: 1200px;
-  position: absolute;
+
+/* Body div */
+.body_container {
+  height: 100%;
+  width: 100%;
+  position: fixed;
   text-align: center;
-  top: 0px;
+  overflow: hidden;
+  top: 60px;
+  /*background-color: darkgray;*/
+
 }
 
+/* Styling for the static heading */
+.static_heading_container {
+	width: 40%;
+	height: 100%;
+	left: 0px;
+	padding: 5px;
+	margin: 5px;
+	/*background: slateblue;*/
+}
 
-/* Container */
+.left_part{
+	height:100%;
+	width: 50%;
+	left: 0;
+	position: absolute;
+	/*background-color: slateblue;*/
+}
+
+.right_part{
+	height:100%;
+	width: 50%;
+	position: absolute;
+	right: 0;
+	/*background-color: aqua;*/
+}
+
+.h1_container {
+	width: 60%;
+	border-radius: 30px;
+	position: absolute;
+	bottom: 30vh;
+	left: 20vh;
+	/*background-color: lightgrey;*/
+}
+
+.search_container {
+	width: 90%;
+	height: 90%;
+	left: 5vh;
+	top: 5vh;
+	position: absolute;
+	overflow-y: auto;
+	text-align: left;
+	/*background-color: yellowgreen;*/
+
+}
+
+.free_scroll_space {
+	height: 30%;
+	width: 100%;
+	position:absolute;
+	/*background-color: grey;*/
+}
+
+.heading_box {
+	width: 90%;
+	position:relative;
+	display: flex;
+	background-color: grey;
+	padding: 20px;
+	border-radius: 20px;
+
+}
+.result-list {
+	padding: 10px;
+}
+
+.interclass_space {
+	width:100%;
+	height: 10vh;
+}

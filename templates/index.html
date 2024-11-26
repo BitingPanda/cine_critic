@@ -4,11 +4,7 @@
 {% block head %}
 <title> CineCritic </title>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-{% endblock %}
-
-
-{% block body %}
-
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 <nav class="navbar">
     <ul class="nav-link">
         <li><a href="#" class="nav-item">Reviews</a></li>
@@ -17,37 +13,20 @@
         <li><a href="#" class="nav-item">About</a></li>
     </ul>
 </nav>
+{% endblock %}
+
+
+{% block body %}
+
 
 <div class="container">
-    <h1>Welcome to Movie Reviews</h1>
-    <p class="lead">Search for your favorite movies and reviews</p>
+	<h1>Welcome to Movie Reviews</h1>
+	<p class="lead">Search for your favorite movies and reviews</p>
 
-    <form action="{{ url_for('search') }}" method="GET" class="search-form">
-        <input type="text" class="search-input" placeholder="Search for a movie..." name="search" required>
-        <button type="submit" class="search-button">Search</button>
-    </form>
+	<form action="{{ url_for('search') }}" method="GET" class="search-form">
+		<input type="text" class="search-input" placeholder="Search for a movie..." name="search" required>
+		<button type="submit" class="search-button">Search</button>
+	</form>
 
-    <div class="reviews">
-        {% if reviews %}
-            <h2>Recent Reviews</h2>
-            {% for review in reviews %}
-            <div class="review-card">
-                <h5 class="review-title">{{ review['movie_title'] }}</h5>
-                {% if review['rating'] %}
-                <h6 class="review-rating">Rating: {{ review['rating'] }}/10</h6>
-                {% endif %}
-                <p class="review-content">{{ review['content'] }}</p>
-                <div class="review-footer">
-                    <small class="review-date">Posted on: {{ review['created_at'] }}</small>
-                    <form action="{{ url_for('delete_review', review_id=review['id']) }}" method="POST">
-                        <button type="submit" class="delete-button">Delete</button>
-                    </form>
-                </div>
-            </div>
-            {% endfor %}
-        {% else %}
-        {% endif %}
-    </div>
 </div>
-
 {% endblock %}
