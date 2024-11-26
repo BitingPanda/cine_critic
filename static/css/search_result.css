@@ -1,0 +1,13 @@
+/* Styling for the static heading */
+.static_heading {
+  background-color: #f4f4f4;
+  margin-top: 60px;
+  width: 90%;
+  max-width: 1200px;
+  position: absolute;
+  text-align: center;
+  top: 0px;
+}
+
+
+/* Container */

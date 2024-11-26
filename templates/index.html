@@ -13,6 +13,7 @@
     <ul class="nav-link">
         <li><a href="#" class="nav-item">Reviews</a></li>
         <li><a href="#" class="nav-item">Add Review</a></li>
+	<li><a href="#" class="nav-item">List</a></li>
         <li><a href="#" class="nav-item">About</a></li>
     </ul>
 </nav>
@@ -21,7 +22,7 @@
     <h1>Welcome to Movie Reviews</h1>
     <p class="lead">Search for your favorite movies and reviews</p>
 
-    <form action="{{ url_for('home') }}" method="GET" class="search-form">
+    <form action="{{ url_for('search') }}" method="GET" class="search-form">
         <input type="text" class="search-input" placeholder="Search for a movie..." name="search" required>
         <button type="submit" class="search-button">Search</button>
     </form>

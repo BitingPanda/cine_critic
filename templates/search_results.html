@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Search Results - CineCritic</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/search_result.css') }}">
+{% endblock %}
+
+{% block body %}
+<nav class="navbar">
+    <ul class="nav-link">
+        <li><a href="#" class="nav-item">Reviews</a></li>
+        <li><a href="#" class="nav-item">Add Review</a></li>
+        <li><a href="#" class="nav-item">List</a></li>
+        <li><a href="#" class="nav-item">About</a></li>
+    </ul>
+</nav>
+
+<div class="static_heading">
+	<h1>Search Results for "{{ query }}"</h1>
+
+</div>
+
+<div class="container">
+		  <div class="search-results">
+		<!--      {% if results.movies %}-->
+		<!--      <h2>Movies</h2>-->
+		<!--      <div class="result-list">-->
+		<!--          {% for movie in results .movies %}-->
+		<!--          <div class="result-item">-->
+		<!--              <h3>{{ movie.title }}</h3>-->
+		<!--              <p>Year: {{ movie.year }}</p>-->
+		<!--              <p>Genres: {{ movie.genres }}</p>-->
+		<!--          </div>-->
+		<!--          {% endfor %}-->
+		<!--      </div>-->
+		<!--      {% endif %}-->
+		<!---->
+		<!--      {% if results.people %}-->
+		<!--      <h2>people</h2>-->
+		<!--      <div class="result-list">-->
+		<!--          {% for people in results.people %}-->
+		<!--          <div class="result-item">-->
+		<!--              <h3>{{ people.name }}</h3>-->
+		<!--<p>{{ people.born }} - {{people.died}}</p>-->
+		<!--          </div>-->
+		<!--          {% endfor %}-->
+		<!--      </div>-->
+		<!--      {% endif %}-->
+		<!---->
+		<!--      {% if results.directors %}-->
+		<!--      <h2>Directors</h2>-->
+		<!--      <div class="result-list">-->
+		<!--          {% for director in results.directors %}-->
+		<!--          <div class="result-item">-->
+		<!--              <h3>{{ director.name }}</h3>-->
+		<!--              <p>Birth Year: {{ director.birth_year }}</p>-->
+		<!--          </div>-->
+		<!--          {% endfor %}-->
+		<!--      </div>-->
+		<!--      {% endif %}-->
+		  </div>
+</div>
+{% endblock %}
