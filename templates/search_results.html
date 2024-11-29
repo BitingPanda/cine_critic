@@ -25,7 +25,7 @@
 	<div class="right_part">
 		<div class="search_container">
 			<div class="search-results">
-				{% if not results.titles or not results.people %}
+				{% if not results.titles %}
 				<h1>No titles or people found.</h1>
 				{% endif %}
 
@@ -36,9 +36,10 @@
 				<div class="result-list">
 					{% for movie in results.titles %}
 					<div class="result-item">
-						<h4>{{ movie.original_title }}</h3>
-						<p>Year: {{ movie.premiered }}</p>
-						<p>Genres: {{ movie.type }}</p>
+						<ul>
+							<li><a href="{{ url_for('movie_detail', title_id=movie.title_id) }}">{{ movie.original_title }}</a></li>
+						</ul>
+
 					</div>
 					{% endfor %}
 				</div>
@@ -64,6 +65,3 @@
 
 </div>
 {% endblock %}
-
-
-<!---->

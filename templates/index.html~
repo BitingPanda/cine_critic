@@ -21,7 +21,7 @@
 
 <div class="container">
 	<h1>Welcome to CineCritic</h1>
-	<p class="lead">Search for your favorite movies</p>
+	<p class="lead">Search for your favorite movies and reviews</p>
 
 	<form action="{{ url_for('search') }}" method="GET" class="search-form">
 		<input type="text" class="search-input" placeholder="Search for a movie..." name="search" required>

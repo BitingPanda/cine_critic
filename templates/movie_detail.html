@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>{{ movie.primary_title }} - CineCritic</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/movie_detail.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="body_container">
+	<div class="left_part">
+		<div class="movie_details">
+			<h1>{{ movie.primary_title }}</h1>
+			<p><strong>Original Title:</strong> {{ movie.original_title }}</p>
+			<p><strong>Genres:</strong> {{ movie.genres }}</p>
+			<p><strong>Premiere Year:</strong> {{ movie.premiered }}</p>
+			<!-- Add more movie details here -->
+		</div>
+	</div>
+
+	<div class="right_part">
+		<div class="review_section">
+			<div class="reviews">
+				<div class="review_header">
+					<h2>Reviews</h2>
+				</div>
+				{% if reviews %}
+				<ul>
+					{% for review in reviews %}
+					<li>
+						<strong>{{ review.reviewer_name }}</strong>: {{ review.review_text }}
+					</li>
+					{% endfor %}
+				</ul>
+				{% else %}
+				<p>No reviews yet. Be the first to review!</p>
+				{% endif %}
+			</div>
+
+			<!-- Add Review Form -->
+			<div class="add-review">
+				<h3>Add a Review</h3>
+				<form method="POST">
+					<label for="reviewer_name">Your Name:</label>
+					<input type="text" name="reviewer_name" required>
+					<label for="review_text">Your Review:</label>
+					<textarea name="review_text" rows="4" required></textarea>
+					<button type="submit">Submit Review</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
